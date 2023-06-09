@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { GlobalModule } from '../global/global.module';
 import { IntroComponent } from './intro/intro.component';
 import { ProductComponent } from './product/product.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { BrandsComponent } from './brands/brands.component';
 import { HomeComponent } from './home.component';
+
 
 
 
@@ -14,10 +16,11 @@ import { HomeComponent } from './home.component';
     ProductComponent,
     NewsletterComponent,
     BrandsComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    GlobalModule
   ]
 })
 export class HomeModule { }

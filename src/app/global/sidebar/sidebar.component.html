@@ -1,1 +1,11 @@
-<p>sidebar works!</p>
+<ul [ngClass]="showSide ? 'fixed left-0 top-0 w-[60%] bg-white h-full border-r shadow-black shadow-lg ease-in-out duration-500 md:hidden' : 'ease-in-out duration-500 fixed left-[-100%] md:hidden'">
+<div class="flex justify-between m-4">
+  <h1 class="w-full text-3xl font-bold text-gray-800">{{title}}</h1>
+  <div><i id="cart" class="fa-solid fa-cart-shopping"></i></div>
+</div>
+  <li class="p-4 border-b border-gray-200"><a class="hover:text-gray-500" routerLink="/home">Home</a></li>
+  <li class="p-4 border-b border-gray-200"><a class="hover:text-gray-500" routerLink="/products">Products</a></li>
+  <li class="p-2 mt-4"><a class="bg-blue-600 text-gray-100 w-[200px] rounded-md
+    p-3 hover:tracking-wide" 
+    href="#">Sign-in</a></li>
+</ul>

@@ -1,1 +1,61 @@
-<p>brands works!</p>
+<style>
+  .brand-img img{
+    height: 70px;
+    width: 70px;
+    margin: 6px;
+  }
+  #testimonials img{
+    height: 100px;
+    width: 200px;
+  }
+  #testimonials i{
+    color: blue;
+    font-size: 1.5rem;
+  }
+</style>
+
+<hr>
+<section class="max-w-[1200px] mx-auto md:h-[400px] pt-6 pb-6 md:pb-0">
+  <div class="grid lg:grid-cols-[25%_75%]">
+    <div id="brands" class="hidden lg:block">
+      <h3 class="text-center">Product Brands</h3>
+      <ul class="brand-img grid grid-cols-2">
+        <li class="mx-auto"><img src="assets/nike.png" alt="nike"></li>
+        <li class="mx-auto"><img src="assets/adidas.png" alt="adidas"></li>
+        <li class="mx-auto"><img src="assets/puma.png" alt="puma"></li>
+        <li class="mx-auto"><img src="assets/timberland.png" alt="timberland"></li>
+        <li class="mx-auto"><img src="assets/gucci.png" alt="gucci"></li>
+        <li class="mx-auto"><img src="assets/reebok.png" alt="reebok"></li>
+      </ul>
+    </div>
+    <div id="test" class="mx-auto md:mx-0">
+      <h1 class="text-center font-bold text-2xl mb-4">Testimonials</h1>
+    <div id="testimonials" class="grid md:grid-cols-3">
+      <div class="mx-auto h-[250px] w-[200px] border shadow-md rounded-sm">
+        <img class="mx-auto" src="assets/man.jpg" alt="man">
+        <h4>Bode Thomas</h4>
+        <i class="fa-solid fa-quote-left"></i>
+        <p class="text-xs px-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur 
+          doloremque quam.</p>
+          <i class="fa-solid fa-quote-left float-right"></i>
+      </div>
+      <div class="mx-auto h-[250px] w-[200px] border shadow-md rounded-sm mt-4 md:mt-0">
+        <img class="mx-auto" src="assets/woman.jpg" alt="woman">
+        <h4>Sade Adu</h4>
+        <i class="fa-solid fa-quote-left"></i>
+        <p class="text-xs px-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Iusto.</p>
+          <i class="fa-solid fa-quote-left float-right"></i>
+      </div>
+      <div class="mx-auto h-[250px] w-[200px] border shadow-md rounded-sm mt-4 md:mt-0">
+        <img class="mx-auto" src="assets/woman2.jpg" alt="woman2">
+        <h4>Jane Janet</h4>
+        <i class="fa-solid fa-quote-left"></i>
+        <p class="text-xs px-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Excepturi iure vel minus.</p>
+          <i class="fa-solid fa-quote-left float-right"></i>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>

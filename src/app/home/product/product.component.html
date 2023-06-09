@@ -1,1 +1,22 @@
-<p>product works!</p>
+<section class="bg-white">
+  <div class="max-w-[1280px] py-4 px-4 mx-auto">
+    <h2 class="font-medium text-xl mb-4">Trending Products<span class="ml-2"><i class="fa-solid fa-bolt"></i></span>
+    </h2>
+
+    <div class="grid grid-cols-2 gap-y-10 gap-x-4 md:grid-cols-3 lg:grid-cols-4">
+      <a *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12]" href="#">
+        <div class="h-[150px] w-[200px] rounded-lg border px-4 flex items-center flex-col sm:w-[250px]
+                    lg:h-[170px] lg:w-[300px] lg:justify-between lg:flex-row hover:shadow-lg">
+          <div class="image">
+            <img src="assets/jordan.png" class="h-[70px] w-[120px]" alt="nike shoes">
+          </div>
+          <div id="image-text" class="mt-2 md:mt-0">
+            <h3>Nike Air Jordans</h3>
+            <p class="font-bold">$48</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+

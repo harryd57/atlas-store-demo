@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'atlas-sidebar',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
+  
+  @Input() showSide! : boolean;
+  @Input() title: string = ""
 
 }

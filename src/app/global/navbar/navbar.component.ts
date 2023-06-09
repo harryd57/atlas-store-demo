@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  hideNav : boolean = false;
+
+  title : string = "ATLAS";
+
+  toggle() {
+    this.hideNav = !this.hideNav
+  }
 }
