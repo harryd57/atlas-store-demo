@@ -6,7 +6,6 @@ interface sliderImage {
   imageText: string;
 }
 
-
 @Component({
   selector: 'atlas-intro',
   templateUrl: './intro.component.html',

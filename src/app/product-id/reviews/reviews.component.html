@@ -1,0 +1,36 @@
+<section class="bg-white h-[900px] max-w-[1300px] mx-auto my-4 md:h-[600px]">
+  <div class="py-10 px-4 max-w-[1280px] mx-auto grid md:grid-cols-[40%_60%] md:gap-x-8 lg:gap-x-0">
+    <div>
+      <h1 class="font-bold text-xl">Customer Reviews</h1>
+      <div class="flex flex-row mt-4">
+        <span *ngFor="let items of [1,2,3,4]" class="text-yellow-500"><i class="fa-solid fa-star"></i></span>
+        <span class="text-gray-300"><i class="fa-solid fa-star"></i></span>
+        <span class="ml-2 text-sm">Based on 1000 reviews</span>
+      </div>
+      <div id="progress-container" class="pt-8">
+      <div class="flex flex-row mb-2" *ngFor="let item of data">
+        <span class="text-sm px-2"><p>{{item.rating}}</p></span>
+        <span class="mx-2 text-yellow-500"><i class="fa-solid fa-star"></i></span>
+        <div class="w-[300px] bg-gray-100 rounded-full mt-[6px] h-2.5 dark:bg-gray-700">
+          <div class="bg-yellow-500 h-3 rounded-full dark:bg-blue-500" [ngStyle]="{'width': item.percent}"></div>
+        </div>
+        <span class="text-sm ml-3">{{item.percent}}</span>
+      </div>
+    </div>
+    </div>
+    <div class="grid items-center">
+      <div class="border-b h-[150px] pt-6" *ngFor="let item of [1,2,3]">
+        <div class="flex flex-row">
+          <img class="h-[50px] w-[50px] rounded-full" src="assets/man.jpg" alt="man">
+          <div class="flex flex-col ml-4">
+            <h3 class="text-sm mt-2">John Doe</h3>
+            <span class="text-yellow-500"><i *ngFor="let items of [1,2,3,4,5]" class="fa-solid fa-star"></i></span>
+          </div>
+        </div>
+        <div class="mt-2">
+          <p class="text-sm text-gray-600 md:text-xs lg:text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus dicta quam quod harum modi fugiat iusto at provident consequatur nam.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

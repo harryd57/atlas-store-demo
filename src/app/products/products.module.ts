@@ -5,6 +5,7 @@ import { FilterComponent } from './filter/filter.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { SearchComponent } from './search/search.component';
 import { ProductsComponent } from './products.component';
+import { SortComponent } from './sort/sort.component';
 
 
 
@@ -13,7 +14,8 @@ import { ProductsComponent } from './products.component';
     FilterComponent,
     ProductListComponent,
     SearchComponent,
-    ProductsComponent
+    ProductsComponent,
+    SortComponent
   ],
   imports: [
     CommonModule,

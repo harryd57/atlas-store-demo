@@ -1,0 +1,67 @@
+<section class="max-w-[1300px] bg-white mx-auto mt-4 flex md:h-screen">
+  <div class="grid gap-x-8 md:grid-cols-[40%_60%] px-4">
+    <div class="py-10">
+      <img src="assets/jordan.png" alt="jordan">
+    </div>
+    <div class="max-w-[720px] px-10">
+      <div class="border-b py-6">
+        <h1 class="text-2xl font-bold mb-2">Nike Air Jordans</h1>
+        <h3><span class="text-gray-400">Product code :</span> <span class="font-medium ml-2">123456</span></h3>
+      </div>
+      <div class="py-6 border-b">
+        <p class="text-xl font-bold">$85</p>
+      </div>
+      <div class="py-6 border-b">
+        <span class="mb-6 flex flex-row">
+          <h4 class="text-sm text-gray-500">Color:</h4> 
+          <p class="text-sm font-medium ml-4">Blue & Red</p>
+        </span>
+        <span class="mb-6 flex flex-row">
+          <h4 class="text-sm text-gray-500 mr-2 my-auto">Size: </h4> 
+          <button
+          *ngFor="let items of [1,2,3,4,5]"
+          class="ml-2 border border-gray-300 h-[40px] w-[40px] text-gray-500 text-sm"
+          >
+          9D
+          </button>
+        </span>
+        <span class="flex flex-row">
+          <h4 class="text-sm text-gray-500 my-auto">Quantity: </h4> 
+          <button class="ml-4 border border-gray-300 h-[30px] w-[30px] text-gray-500 rounded-l-sm">-</button>
+          <button class="border border-gray-300 h-[30px] w-[40px] text-gray-500 text-sm">1</button>
+          <button class="border border-gray-300 h-[30px] w-[30px] text-gray-500 rounded-r-sm">+</button>
+        </span>
+      </div>
+      <div class="py-6 border-b">
+        <button class="text-sm border bg-blue-500 text-white h-[50px] w-[200px] rounded-lg hover:bg-blue-400"
+        >Add to Cart</button>
+      </div>
+      <div class="py-6">
+        <h3 class="text-sm">Share with friends</h3>
+        <div class="mt-4">
+          <span class="text-red-600">
+            <i class="fa-brands fa-instagram"></i>
+          </span>
+          <span class="ml-4 text-blue-400">
+            <i class="fa-brands fa-twitter"></i></span>
+          <span class="ml-4 text-green-400">
+            <i class="fa-brands fa-whatsapp"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white max-w-[1300px] mt-4 mx-auto py-6">
+  <div class="px-4 border-b py-4">
+    <h1 class="text-2xl font-bold">Description</h1>
+  </div>
+  <div class="px-4 py-6 max-w-[800px]">
+    <p class="text-sm">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Cupiditate fugit culpa earum, officia illo accusamus quisquam placeat nulla numquam voluptatem labore dicta error ipsum dolorum optio. 
+      Numquam neque dignissimos, totam ex commodi porro fugiat cum itaque quisquam iure tempora magnam!
+    </p>
+  </div>
+</section>

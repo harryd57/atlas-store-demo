@@ -1,4 +1,4 @@
-<section class="bg-[#E6E6FA] h-[600px] w-full px-6 flex items-center">
+<section class="bg-[#E6E6FA] md:h-[600px] w-full px-6 flex items-center">
   <div *ngIf="images && images.length > 0" class="slider-container hidden md:block">
     <div id="img-typed" *ngFor="let image of images; let i=index">
       <img  
@@ -37,7 +37,7 @@
     </button>
   </div>
 
-  <div class="md:hidden text-gray-800 mx-auto">
+  <div class="md:hidden text-gray-800 mx-auto h-[400px] pt-12">
     <p class=" text-xl font-bold">
       Get quality footwears at affordable prices.
     </p>
@@ -48,6 +48,6 @@
       Pay for products through our payment services.
     </p>
     <button class='bg-blue-500 w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-white'>
-      Get Started</button>
+      Shop Now</button>
   </div>
 </section>

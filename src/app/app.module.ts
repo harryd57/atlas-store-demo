@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './home/home.module';
 import { ProductsModule } from './products/products.module';
 import { GlobalModule } from './global/global.module';
+import { ProductIdModule } from './product-id/product-id.module';
 
 
 
@@ -21,7 +22,8 @@ import { GlobalModule } from './global/global.module';
     BrowserAnimationsModule,
     HomeModule,
     ProductsModule, 
-    GlobalModule
+    GlobalModule,
+    ProductIdModule
   ],
   providers: [],
   bootstrap: [AppComponent]
