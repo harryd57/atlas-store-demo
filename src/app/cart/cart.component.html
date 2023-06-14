@@ -1,0 +1,95 @@
+<atlas-navbar></atlas-navbar>
+<div class="main">
+    <div class="f-section">
+        <h1>Shopping Cart</h1>
+
+    </div>
+
+    <div class="cart sec1">
+        <div class="section ">
+            <div class="sec1 border-rgb(227, 221, 221) py-7" [ngClass]="{'border-t-2': item.id !== 1}"  *ngFor="let item of cart">
+                <div class="product-image">
+                    <img src="../../../assets/tee-shirt.jpg" alt="" />
+                </div>
+                <div  >
+                <div class="product-details" >
+                    <div class="flex gap-x-32 items-start">
+                        <div >
+                            <div>
+                                <p class="mb-1.5">Basic Tee</p>
+                                <span class="flex mb-1.5">
+                                    <p>Sienna</p>
+                                    <span class="sec1a"> </span>
+                                    <p>Large</p>
+                                </span>
+
+                                <p>$32.00</p>
+                            </div>
+                            <div class="avail flex gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="#22c55e" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                </svg> 
+                                <p> In Stock</p>
+                            </div>
+                        </div>
+
+                        <div class="drop">
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+
+
+
+                        <div class="close-btn" (click)="removeItem(item.id)">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                
+            </div>
+        </div>
+
+            <!-- <hr /> -->
+        </div>
+
+        <div class="order">
+            <div class="order-text">
+                <h1 class=" mb-8 ">Order Summary</h1>
+            </div>
+            
+            <div class="flex border-b-2 mb-8 gap-96">
+                <p class="w-1/5">Subtotal</p>
+                <p>$99.00</p>
+            </div>
+            <div class="flex justify-between mb-8 border-b-2 gap-52">
+                <p class="w-3/5">Shippping estimate</p>
+                <p class="w-1/5">$99.00</p>
+            </div>
+            <div class="flex mb-8 gap-96 border-b-2 ">
+                <p class="w-1/5">Tax estimate</p>
+                <p>$99.00</p>
+            </div>
+
+            <div class="flex gap-96 font-bold">
+                <p class=" mb-8 w-1/5">Order Total</p>
+                <p>$117.32</p>
+            </div>
+
+            <button type="button" class="btn">
+                <p>Checkout</p></button>
+        </div>
+    </div>
+</div>
+<atlas-footer></atlas-footer>

@@ -8,6 +8,7 @@ import { HomeModule } from './home/home.module';
 import { ProductsModule } from './products/products.module';
 import { GlobalModule } from './global/global.module';
 import { ProductIdModule } from './product-id/product-id.module';
+import { CartModule } from './cart/cart.module';
 
 
 
@@ -23,7 +24,8 @@ import { ProductIdModule } from './product-id/product-id.module';
     HomeModule,
     ProductsModule, 
     GlobalModule,
-    ProductIdModule
+    ProductIdModule, 
+    CartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
