@@ -17,7 +17,7 @@ export class IntroComponent implements OnInit{
   @Input() indicators = true;
   @Input() controls = true;
   @Input() autoSlide = false;
-  @Input() slideInterval = 5000;
+  @Input() slideInterval = 2000;
 
   selectedIndex = 0;
 
@@ -53,4 +53,4 @@ export class IntroComponent implements OnInit{
       this.selectedIndex++;
     }
   }
-}
+} 

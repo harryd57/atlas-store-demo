@@ -12,8 +12,5 @@ export class CartComponent {
   removeItem(id:any){
      this.cart = this.cart.filter((item:any) => item.id !== id)
      
-      
-     
-    
   }
 }

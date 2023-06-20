@@ -1,5 +1,23 @@
 <atlas-navbar></atlas-navbar>
-<atlas-filter></atlas-filter>
-<atlas-product-list></atlas-product-list>
-<atlas-search></atlas-search>
+  <main class="bg-[#E6E6FA] py-1">
+    <div class="bg-white h-[50px] w-full mx-auto flex items-center px-2">
+      <h3 class="text-sm">
+        <span class="hover:text-gray-400"><a href="#">Home</a></span>
+        <span class="ml-2">></span>
+        <span class="ml-2 hover:text-gray-400"><a href="#">Products</a></span>
+      </h3>
+    </div>
+    <atlas-search></atlas-search>
+    <div class="max-w-[1200px] mx-auto grid md:grid-cols-[35%_65%]">
+      <div>
+        <atlas-filter></atlas-filter>
+      </div>
+      <div>
+        <div class="flex justify-end">
+          <atlas-sort></atlas-sort>
+        </div>
+        <atlas-product-list></atlas-product-list>
+      </div>
+    </div>
+  </main>
 <atlas-footer></atlas-footer>
