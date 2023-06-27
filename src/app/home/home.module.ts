@@ -23,6 +23,9 @@ import { HomeComponent } from './home.component';
     CommonModule,
     GlobalModule,
     AppRoutingModule
+  ],
+  exports: [
+    ProductComponent
   ]
 })
 export class HomeModule { }

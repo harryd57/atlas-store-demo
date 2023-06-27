@@ -1,12 +1,16 @@
-<section class="my-6 hidden md:block">
+<div *ngIf="loading" class=" flex justify-center items-center my-8">
+  <div class="animate-spin rounded-full h-32 w-32 border-b-4 border-blue-400"></div>
+</div>
+
+<section *ngIf="!loading" class="my-6 hidden md:block">
   <div class="grid justify-between gap-x-4 gap-y-4 md:grid-cols-3 lg:grid-cols-4">
-  <div *ngFor="let items of [1,2,3,4,5,6,7,8,9,10,11,12]"
-  class="bg-white h-[250px] w-[170px] lg:w-[180px] rounded-md hover:shadow-2xl hover:h-[260px] hover:w-[180px]"
+  <div *ngFor="let items of product | slice : 0:12"
+  class="bg-white h-[280px] w-[170px] lg:w-[180px] rounded-md hover:shadow-2xl hover:h-[290px] hover:w-[180px]"
   >
-  <img class="h-[120px] mx-auto" src="assets/images/s1.jpg" alt="bella toes">
-  <span class="ml-4 text-sm">Bella Toes</span>
+  <img class="h-[120px] mx-auto" [src]="items.image_url" alt="bella toes">
+  <span class="ml-4 text-xs">{{items.name}}</span>
   <hr class="w-[80%] mx-auto">
-  <p class="ml-4 py-2 text-sm font-bold">$70</p>
+  <p class="ml-4 py-2 text-sm font-bold">₦ {{ items.price.toLocaleString() }}</p>
   <hr class="w-[80%] mx-auto">
   <div class="ml-4">
     <span class="text-yellow-500 text-sm"><i *ngFor="let items of [1,2,3,4]" class="fa-solid fa-star"></i></span>
@@ -19,18 +23,18 @@
 </div>
 </section>
 
-<section class="my-6 md:hidden">
-  <div *ngFor="let items of [1,2,3,4,5,6]"
-  class="bg-white h-[150px] w-[400px] mb-1 mx-auto grid grid-cols-[40%_60%]"
+<section *ngIf="!loading" class="my-6 md:hidden">
+  <div *ngFor="let items of product | slice : 0:6"
+  class="bg-white h-[170px] w-[400px] mb-1 mx-auto grid grid-cols-[40%_60%]"
   >
   <div id="img-container">
-    <img class="h-[120px] mx-auto mt-4" src="assets/images/s1.jpg" alt="bella toes">
+    <img class="h-[120px] mx-auto mt-4" [src]="items.image_url" alt="bella toes">
   </div>
 
   <div id="text-container">
-    <span class="ml-4 text-sm">Bella Toes</span>
+    <span class="ml-4 text-xs">{{items.name}}</span>
     <hr class="w-[80%] mx-auto">
-    <p class="ml-4 py-2 text-sm font-bold">$70</p>
+    <p class="ml-4 py-2 text-sm font-bold">₦ {{ items.price.toLocaleString() }}</p>
     <hr class="w-[80%] mx-auto">
     <div class="ml-4">
       <span class="text-yellow-500 text-sm"><i *ngFor="let items of [1,2,3,4]" class="fa-solid fa-star"></i></span>

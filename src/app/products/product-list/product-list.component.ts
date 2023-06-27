@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ProductList } from '../products';
 
 @Component({
   selector: 'atlas-product-list',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class ProductListComponent {
 
+  @Input() loading : boolean = true;
+  @Input() product : ProductList[] = []
 }

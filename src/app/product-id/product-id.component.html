@@ -1,16 +1,25 @@
 <atlas-navbar></atlas-navbar>
-<main class="bg-[#E6E6FA] py-1 overflow-hidden">
+<div *ngIf="loading" class="h-screen flex justify-center items-center my-8">
+  <div class="animate-spin rounded-full h-32 w-32 border-b-4 border-blue-400"></div>
+</div>
+<main *ngIf="!loading" class="bg-[#E6E6FA] py-1 overflow-hidden">
   <div class="bg-white h-[50px] w-full mx-auto flex items-center px-2 shadow-lg">
     <h3 class="text-sm">
       <span class="hover:text-gray-400"><a href="#">Home</a></span>
       <span class="ml-2">></span>
-      <span class="ml-2 hover:text-gray-400"><a href="#">Sneakers</a></span>
+      <span class="ml-2 hover:text-gray-400"><a href="#">{{ product[0].brandName }}</a></span>
       <span class="ml-2">></span>
-      <span class="ml-2">Nike Air Jordans</span>
+      <span class="ml-2">{{ product[0].name }}</span>
     </h3>
   </div>
-  <atlas-product></atlas-product>
-  <atlas-suggest></atlas-suggest>
+  <atlas-product-det
+  [name]="product[0].name"
+  [price]="product[0].price"
+  [image]="product[0].image_url"
+  [details]="product[0].productDetails"
+  [brand]="product[0].brandName"
+  ></atlas-product-det>
+  <atlas-suggest [brandID]="product[0].brand"></atlas-suggest>
   <atlas-reviews></atlas-reviews>
 </main>
 <atlas-footer></atlas-footer>

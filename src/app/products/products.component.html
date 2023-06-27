@@ -10,13 +10,18 @@
     <atlas-search></atlas-search>
     <div class="max-w-[1200px] mx-auto grid md:grid-cols-[35%_65%]">
       <div>
-        <atlas-filter></atlas-filter>
+        <atlas-filter
+        [products]="products"
+        ></atlas-filter>
       </div>
       <div>
         <div class="flex justify-end">
           <atlas-sort></atlas-sort>
         </div>
-        <atlas-product-list></atlas-product-list>
+        <atlas-product-list
+        [product]="products"
+        [loading]="loading"
+        ></atlas-product-list>
       </div>
     </div>
   </main>

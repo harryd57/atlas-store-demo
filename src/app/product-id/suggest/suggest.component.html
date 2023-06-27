@@ -3,19 +3,23 @@
     <h2 class="font-medium text-xl mb-4">Suggested Products<span class="ml-2"><i class="fa-solid fa-bolt"></i></span>
     </h2>
 
-    <div class="flex justify-between overflow-x-auto">
-      <a *ngFor="let item of [1,2,3,4,4,4,4,4,4,4,4,4]" routerLink="/product-id">
+    <div *ngIf="!loading" class="flex justify-between overflow-x-auto">
+      <a *ngFor="let item of product" [routerLink]="['/product-id', item.id]">
         <div class="h-[150px] bg-white ml-4 mb-4 w-[200px] rounded-lg border px-4 flex items-center flex-col sm:w-[250px]
                     lg:h-[170px] lg:w-[300px] lg:justify-between lg:flex-row hover:shadow-lg">
           <div class="image">
-            <img src="assets/jordan.png" class="h-[70px] w-[120px]" alt="nike shoes">
+            <img [src]="item.image_url" class="h-[70px] w-[120px]" alt="nike shoes">
           </div>
           <div id="image-text" class="mt-2 md:mt-0">
-            <h3>Nike Air Jordans</h3>
-            <p class="font-bold">$48</p>
+            <h3>{{item.name}}</h3>
+            <p class="font-bold"> ₦ {{item.price.toLocaleString()}}</p>
           </div>
         </div>
       </a>
+    </div>
+
+    <div *ngIf="loading" class=" flex justify-center items-center my-8">
+      <div class="animate-spin rounded-full h-32 w-32 border-b-4 border-blue-400"></div>
     </div>
   </div>
 </section>

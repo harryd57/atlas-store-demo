@@ -7,12 +7,14 @@ import { ProductIdComponent } from './product-id/product-id.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'products', component: ProductsComponent },
-  { path: 'product-id', component: ProductIdComponent},
+  { path: 'product-id/:id', component: ProductIdComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    scrollPositionRestoration: 'enabled'
+  })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
