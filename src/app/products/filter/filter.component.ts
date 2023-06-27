@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { ProductList } from '../products';
 
+
 @Component({
   selector: 'atlas-filter',
   templateUrl: './filter.component.html',

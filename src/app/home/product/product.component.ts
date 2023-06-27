@@ -8,6 +8,7 @@ import { localStorageToken } from '../../localstorage.token';
   selector: 'atlas-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
+  
 })
 export class ProductComponent implements OnInit {
 

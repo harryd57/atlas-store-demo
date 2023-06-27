@@ -1,0 +1,145 @@
+.main{
+    box-sizing: border-box;
+    border: .1px solid rgb(239, 235, 235);
+    margin: 4em;
+    padding: 5em;
+    border-radius: 20px;
+}
+
+.f-section > h1{
+    font-size: 45px;
+    font-weight: 900;
+}
+
+/* .section{
+    /* width: 50%; */
+    /* margin: 30px; */
+    /* padding: 55px 0px 55px 0px; */
+    /* border-top: 1px solid  rgb(227, 221, 221); */
+    /* border-bottom: 1px solid  rgb(227, 221, 221); */
+
+
+.avail{
+    margin-top: 6em;
+}
+
+.sec1{
+    display: flex;
+    align-items: flex-start;
+    gap: 2.5em;
+}
+
+.product-details{
+    width: 70%;
+}
+
+.sec1a{
+    height: 20px;
+    width: 1px;
+    background-color: rgb(227, 221, 221);
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.product-image{
+    width: 30%;
+}
+
+.product-image > img{
+    width: 100%;
+}
+
+.drop{
+    border: 1px solid rgb(227, 221, 221) ;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+
+.drop > select{   
+    width: 50px;
+    height: 40px;    
+    display: flex;
+    align-self: center;
+   
+}
+
+select:focus{
+    outline: none;
+}
+
+.order{
+   background-color: #f9fafb;
+   padding: 5em;
+}
+
+.order-text > h1{
+    font-size:25px;
+    font-weight: 600;
+}
+
+.btn{
+    background-color: #4f46e5;
+    color: #fff;
+    padding: 20px;
+    width: 400px;
+    display: flex;
+    justify-content: center; 
+    border-radius: 10px;
+    font-size: 18px;
+    margin: 0 auto;
+    font-weight: 600;
+}
+
+.basic-text{
+    margin-bottom: 25px;
+}
+
+.ha{
+    gap: 9em;
+}
+
+@media only screen and (max-width:1400px) {
+    
+    .main{      
+        margin: 2em;
+        padding: 7em;
+        padding-top: 2.5em;
+    }
+
+    .sec1{
+        flex-direction: column ;
+    }
+
+    /* .product-image{
+        width: 70%;
+    } */
+    .product-image > img{
+        width: 100%;
+        /* gap: 2px; */
+    }
+
+   
+
+    .avail{
+        margin-top: 2em;
+    }
+
+    /* .close-btn{
+        margin-left: 10em;
+    } */
+    
+}
+
+@media only screen and (max-width: 1024px) {
+    .cart-group {        
+        flex-direction: column;
+      
+    }
+
+    /* .product-details{
+        border: 1px solid red;
+    } */
+    
+
+}
