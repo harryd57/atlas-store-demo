@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { ProductsService } from '../../products/services/products.service';
 import { ProductList } from '../../products/products';
 
@@ -12,6 +12,7 @@ export class SuggestComponent implements OnInit {
   product : ProductList[] = [];
   @Input() brandID : number = 0;
   loading : boolean = true;
+  @Output() display = new EventEmitter<number>();
 
   constructor(private productsServices: ProductsService){}
 
@@ -32,5 +33,9 @@ export class SuggestComponent implements OnInit {
         }
       })
     }
+  }
+
+  onDisplay(id : number) : void{
+    this.display.next(id)
   }
 }

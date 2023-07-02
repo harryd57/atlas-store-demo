@@ -33,4 +33,26 @@ export class ProductsService {
   getProductByBrand(id : number){
     return this.get(`products/brand/${id}`)
   }
+
+  getProductByCategory(id : number){
+    return this.get(`products/category/${id}`)
+  }
+
+  getProductsByPrice(price : string){
+    return this.get(`products/sort/${price}`)
+  }
+
+  getCategories() {
+    return this.get('products/category')
+  }
+
+  getBrands(){
+    return this.get('products/brand')
+  }
+  getProductsBySearch(search : string){
+    return this.get(`products/search?search=${search}`)
+  }
+  getProductsByPriceValue(min: number, max: number){
+    return this.get(`products/price/${min}/${max}`)
+  }
 }

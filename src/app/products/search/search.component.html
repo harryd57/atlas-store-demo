@@ -1,7 +1,8 @@
 <section class="bg-white py-4">
   <div class="max-w-[1000px] mx-auto flex flex-row justify-center">
-    <input class="h-[40px] w-[600px] border border-gray-300 p-2 rounded-l-md text-gray-700 text-sm focus:outline-gray-300" type="text">
-    <button class="bg-blue-500 text-white h-[40px] w-[40px] rounded-r-md">
+    <input class="h-[40px] w-[600px] border border-gray-300 p-2 rounded-l-md text-gray-700 text-sm focus:outline-gray-300"
+    type="text" name="search" placeholder="Search for products" #search required>
+    <button type="submit" (click)="onShowSearch(search.value)" class="bg-blue-500 text-white h-[40px] w-[40px] rounded-r-md">
       <i class="fa-solid fa-magnifying-glass"></i>
     </button>
   </div>

@@ -11,8 +11,9 @@ import { ProductList } from './products';
 export class ProductsComponent implements OnInit {
 
   products : ProductList[] = []
-
   loading : boolean = true
+  searchText : string = ""
+  totalProducts : number = 0
 
   constructor(private productService:ProductsService) {}
 
@@ -24,6 +25,7 @@ export class ProductsComponent implements OnInit {
     this.productService.getProducts().subscribe({
       next:(res)=>{
         this.products = this.shuffle(res)
+        this.totalProducts = res.length;
         console.log(this.products);
         this.loading = false
         // this.localStorage.setItem('product', this.products)  
@@ -43,5 +45,82 @@ export class ProductsComponent implements OnInit {
       [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]]
     }
     return array;
+  }
+
+  onShowCategory(id : number) : void{
+    this.loading = true
+    this.productService.getProductByCategory(id).subscribe({
+      next:(res)=>{
+        this.products = res
+        this.totalProducts = res.length;
+        console.log(this.products);
+        this.loading = false
+      },
+      error:(err)=>{console.log(err); this.loading = false}
+    })
+  }
+
+
+  onShowBrand(id : number) : void{
+    this.loading = true
+    this.productService.getProductByBrand(id).subscribe({
+      next:(res)=>{
+        this.products = res
+        this.totalProducts = res.length;
+        console.log(this.products);
+        this.loading = false
+      },
+      error:(err)=>{console.log(err); this.loading = false}
+    })
+  }
+
+  onSortPrice(price : string): void{
+    this.loading = true
+    this.productService.getProductsByPrice(price).subscribe({
+      next:(res)=>{
+        this.products = res
+        this.totalProducts = res.length;
+        console.log(this.products);
+        this.loading = false
+      },
+      error:(err)=>{console.log(err); this.loading = false}
+    })
+  }
+
+  onShowAll(all : string): void{
+    this.loading = true
+    this.getProduct()
+    console.log(`display ${all} products`);
+  }
+
+  onShowSearch(search: string): void{
+    this.loading = true;
+    this.productService.getProductsBySearch(search).subscribe({
+      next:(res)=>{
+        this.products = res
+        this.totalProducts = res.length;
+        console.log(this.products);
+        this.loading = false
+      },
+      error:(err)=>{console.log(err); this.loading = false}
+    })
+  }
+
+  //Disabled
+  onSearchText(keyword : string): void{
+    this.searchText = keyword
+  }
+
+  onPriceValue(price : any): void{
+    this.loading = true;
+    this.productService.getProductsByPriceValue(price.min, price.max).subscribe({
+      next:(res)=>{
+        this.products = res
+        this.totalProducts = res.length;
+        console.log(this.products);
+        this.loading = false
+      },
+      error:(err)=>{console.log(err); this.loading = false}
+    })
   }
 } 

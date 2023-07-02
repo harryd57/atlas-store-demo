@@ -3,7 +3,6 @@ import { ProductsService } from '../../products/services/products.service';
 import { ProductList } from '../../products/products';
 import { localStorageToken } from '../../localstorage.token';
 
-
 @Component({
   selector: 'atlas-product',
   templateUrl: './product.component.html',
@@ -11,7 +10,6 @@ import { localStorageToken } from '../../localstorage.token';
   
 })
 export class ProductComponent implements OnInit {
-
   products : ProductList[] = [];
   loading : boolean = true;
 
@@ -19,7 +17,6 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProduct()
-    // console.log(this.localStorage.getItem('product'))
   }
 
   getProduct(){

@@ -19,7 +19,9 @@
   [details]="product[0].productDetails"
   [brand]="product[0].brandName"
   ></atlas-product-det>
-  <atlas-suggest [brandID]="product[0].brand"></atlas-suggest>
+  <atlas-suggest [brandID]="product[0].brand"
+  (display)="onDisplay($event)"
+  ></atlas-suggest>
   <atlas-reviews></atlas-reviews>
 </main>
 <atlas-footer></atlas-footer>

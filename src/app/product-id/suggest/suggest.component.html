@@ -4,7 +4,7 @@
     </h2>
 
     <div *ngIf="!loading" class="flex justify-between overflow-x-auto">
-      <a *ngFor="let item of product" [routerLink]="['/product-id', item.id]">
+      <a *ngFor="let item of product" [routerLink]="['/product-id', item.id]" (click)="onDisplay(item.id)">
         <div class="h-[150px] bg-white ml-4 mb-4 w-[200px] rounded-lg border px-4 flex items-center flex-col sm:w-[250px]
                     lg:h-[170px] lg:w-[300px] lg:justify-between lg:flex-row hover:shadow-lg">
           <div class="image">

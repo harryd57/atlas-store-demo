@@ -3,8 +3,8 @@
   <div class="flex flex-row w-[400px]">
     <h3 class="text-xs text-gray-400 my-auto">Sort By:</h3>
     <span class="ml-4">
-    <button class="text-xs px-2 border border-blue-500 h-[25px]">Price - High To Low</button>
-    <button class="ml-4 text-xs px-2 border border-blue-500 h-[25px]">Price - Low To High</button>
+    <button class="text-xs px-2 border border-blue-500 h-[25px]" (click)="onSortPrice('-price')">Price - High To Low</button>
+    <button class="ml-4 text-xs px-2 border border-blue-500 h-[25px]" (click)="onSortPrice('price')">Price - Low To High</button>
     </span>
   </div>
 </section>

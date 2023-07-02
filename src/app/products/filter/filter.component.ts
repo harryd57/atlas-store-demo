@@ -1,39 +1,77 @@
-import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
-import { ProductList } from '../products';
-
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { FilterList } from './filter';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'atlas-filter',
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.css']
 })
-export class FilterComponent implements OnInit, OnChanges{
-  @Input() products : ProductList[] = []
+export class FilterComponent implements OnInit{
 
-  category : string[] = []
+  @Output() showCategory = new EventEmitter<number>();
+  @Output() showBrand = new EventEmitter<number>();
+  @Output() showAll = new EventEmitter<string>();
+  @Output() searchText = new EventEmitter<string>();
+  @Output() priceValue = new EventEmitter<any>();
 
-  constructor(){}
+  category : FilterList[] = [];
+  brand : FilterList[] = [];
+  loading : boolean = true;
+  values = {min: 0, max: 100000}
 
-  ngOnChanges(changes: SimpleChanges): void {
-    this.getCategory(changes['products'].currentValue)
-    console.log(changes['products'].currentValue)
-    console.log(this.category)
-  }
+
+  constructor(private productServices: ProductsService){}
 
   ngOnInit(): void {
-    
+    this.getCategory();
+    this.getBrand();
   }
 
+  getCategory(){
+    this.productServices.getCategories().subscribe({
+      next:(res)=>{
+        this.category = res;
+      },
+      error:(err)=>{console.log(err)}
+    })
+  }
 
-  getCategory(array: ProductList[]){
+  getBrand(){
+    this.productServices.getBrands().subscribe({
+      next:(res)=>{
+        this.brand = res;
+        this.loading = false;
+      },
+      error:(err)=>{console.log(err)}
+    })
+  }
 
-    for(let product of array){
-      if(product.categoryName !in this.category){
-        this.category.push(product.categoryName)
+  onShowCategory(id : number) : void{
+    this.showCategory.next(id)
+  }
+
+  onShowBrand(id : number) : void{
+    this.showBrand.next(id)
+  }
+
+  onShowAllProducts(all : string): void{
+    this.showAll.next(all)
+    }
+
+    //Disabled
+    onSearchText(keyword : string) : void{
+      this.searchText.next(keyword)
+    }
+
+    onPriceValue(min: string, max: string): void{
+      if(min && max){
+        this.values.min = parseInt(min);
+        this.values.max = parseInt(max);
+        this.priceValue.next(this.values)
+      }else{
+        this.priceValue.next(this.values)
       }
     }
-    console.log(this.products)
-    console.log(this.category)
   }
 
-}

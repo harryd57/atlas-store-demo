@@ -35,5 +35,10 @@ export class ProductIdComponent implements OnInit{
     })
   }
 
+  onDisplay(id: number): void{
+    this.loading = true
+    this.id = id
+    this.getProduct()
+  }
 
 }

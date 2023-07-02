@@ -1,34 +1,38 @@
-<<<<<<< HEAD
-=======
   <section class="md:mt-[90px] mt-6 ml-6 w-[250px] lg:mx-auto lg:w-[300px] bg-white py-6 flex justify-center">
     <div class="flex flex-col">
-    <div>
-      <input class="bg-[#E6E6FA] h-[25px] w-[150px] px-2 text-sm focus:outline-none focus:border-b" type="text" placeholder="Search">
-    </div>
+    <!-- <div>
+      <input class="bg-[#E6E6FA] h-[25px] w-[150px] px-2 text-sm focus:outline-none focus:border-b"
+        type="text" placeholder="Search" (keyup)="onSearchText(keyword.value)" #keyword>
+    </div> -->
     <div class="mt-4">
       <h6 class="font-bold">Categories</h6>
-      <ul class="mt-2 text-sm text-gray-500">
+      <ul *ngIf="loading" class="mt-2 text-sm text-gray-500">
         <li class="w-[70px] hover:border-b-2 hover:cursor-pointer">All</li>
-        <li class="w-[70px] hover:border-b-2 hover:cursor-pointer">Sneakers</li>
-        <li class="w-[70px] hover:border-b-2 hover:cursor-pointer">Shoes</li>
-        <li class="w-[70px] hover:border-b-2 hover:cursor-pointer">Slides</li>
-        <li class="w-[70px] hover:border-b-2 hover:cursor-pointer">Heels</li>
+      </ul>
+      <ul *ngIf="!loading" class="mt-2 text-sm text-gray-500">
+        <li class="w-[70px] hover:border-b-2 hover:cursor-pointer" (click)="onShowAllProducts('all')">All</li>
+        <li *ngFor="let item of category" (click)="onShowCategory(item.id)" class="w-[70px] hover:border-b-2 hover:cursor-pointer">{{item.name}}</li>
       </ul>
     </div>
     <div class="mt-4">
       <h6 class="font-bold">Brands</h6>
-      <select class="text-xs bg-[#E6E6FA] p-2" name="brand" id="">
-        <option value="">Nike</option>
-        <option value="">Adiddas</option>
-        <option value="">Timberland</option>
-        <option value="">Puma</option> 
-      </select>
+      <ul *ngIf="loading" class="mt-2 text-sm text-gray-500">
+        <li class="w-[70px] hover:border-b-2 hover:cursor-pointer">All</li>
+      </ul>
+      <ul *ngIf="!loading" class="mt-2 text-sm text-gray-500">
+        <li class="w-[70px] hover:border-b-2 hover:cursor-pointer" (click)="onShowAllProducts('all')">All</li>
+        <li *ngFor="let item of brand" (click)="onShowBrand(item.id)" class="w-[70px] hover:border-b-2 hover:cursor-pointer">{{item.name}}</li>
+      </ul>
     </div>
     <div class="mt-4">
       <h6 class="font-bold">Price</h6> 
-      <input class="h-[5px] w-[100px]" type="range" name="" id="">
+      <div class="flex flex-col">
+        <input class="h-[25px] w-[100px] text-sm text-gray-700 bg-[#E6E6FA] px-2 mb-2 focus:outline-none focus:border-b"
+        type="number" placeholder="Min Price" required #min>
+        <input class="h-[25px] w-[100px] text-sm text-gray-700 bg-[#E6E6FA] px-2 mb-2 focus:outline-none focus:border-b"
+        type="number" placeholder="Max Price" required #max>
+        <input (click)="onPriceValue(min.value, max.value)" class="h-[25px] w-[50px] text-sm bg-blue-500 px-2 text-white rounded-md" type="submit" value="Go">
+      </div>
     </div>
   </div>
-  </section>
-
->>>>>>> 6fd6161a7b805ba687f558d0a9282a6ad4546e7f
+  </section> 

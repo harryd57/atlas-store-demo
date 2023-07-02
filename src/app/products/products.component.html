@@ -7,20 +7,28 @@
         <span class="ml-2 hover:text-gray-400"><a href="#">Products</a></span>
       </h3>
     </div>
-    <atlas-search></atlas-search>
+    <atlas-search
+    (showSearch)="onShowSearch($event)"
+    ></atlas-search>
     <div class="max-w-[1200px] mx-auto grid md:grid-cols-[35%_65%]">
       <div>
         <atlas-filter
-        [products]="products"
+        (showAll)="onShowAll($event)"
+        (showCategory)="onShowCategory($event)"
+        (showBrand)="onShowBrand($event)"
+        (searchText)="onSearchText($event)"
+        (priceValue)="onPriceValue($event)"
         ></atlas-filter>
       </div>
       <div>
         <div class="flex justify-end">
-          <atlas-sort></atlas-sort>
+          <atlas-sort (sortPrice)="onSortPrice($event)"></atlas-sort>
         </div>
         <atlas-product-list
         [product]="products"
         [loading]="loading"
+        [searchText]="searchText"
+        [totalItems]="totalProducts"
         ></atlas-product-list>
       </div>
     </div>

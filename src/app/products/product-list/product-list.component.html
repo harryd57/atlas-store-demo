@@ -1,10 +1,10 @@
-<div *ngIf="loading" class=" flex justify-center items-center my-8">
+<div *ngIf="loading" class=" flex justify-center items-center my-8 h-screen">
   <div class="animate-spin rounded-full h-32 w-32 border-b-4 border-blue-400"></div>
 </div>
 
 <section *ngIf="!loading" class="my-6 hidden md:block">
   <div class="grid justify-between gap-x-4 gap-y-4 md:grid-cols-3 lg:grid-cols-4">
-  <div *ngFor="let items of product | slice : 0:12"
+  <div *ngFor="let items of product | paginate : { itemsPerPage: itemsPerPagelg, currentPage: page, totalItems: count} | customFilter:searchText; let i = index"
   class="bg-white h-[280px] w-[170px] lg:w-[180px] rounded-md hover:shadow-2xl hover:h-[290px] hover:w-[180px]"
   >
   <img class="h-[120px] mx-auto" [src]="items.image_url" alt="bella toes">
@@ -21,10 +21,17 @@
   </div>
   </div>
 </div>
+  <div *ngIf="!product.length" class="bg-white text-center p-6 rounded-lg h-[100px] w-[350px] mx-auto">
+    <h3 class="text-base">Sorry, no available products to display!!</h3>
+  </div>
+
+  <div class="mt-8 py-5 flex justify-center items-center">
+    <pagination-controls (pageChange)="onTableDataChange($event)" [autoHide]="autoHide" [maxSize]="6"></pagination-controls>
+  </div>
 </section>
 
 <section *ngIf="!loading" class="my-6 md:hidden">
-  <div *ngFor="let items of product | slice : 0:6"
+  <div *ngFor="let items of product | paginate : { itemsPerPage: itemsPerPagesm, currentPage: page, totalItems: count} | customFilter:searchText; let i = index"
   class="bg-white h-[170px] w-[400px] mb-1 mx-auto grid grid-cols-[40%_60%]"
   >
   <div id="img-container">
@@ -44,6 +51,12 @@
       <button class="text-xs h-[20px] w-[100px] border bg-blue-500 text-white rounded-md">More Options</button>
     </div>
   </div>
+  </div>
+  <div *ngIf="!product.length" class="bg-white text-center p-6 rounded-lg h-[100px] w-[350px] mx-auto">
+    <h3 class="text-base">Sorry, no available products to display!!</h3>
+  </div>
+  <div class="mt-8 py-5 flex justify-center items-center">
+    <pagination-controls (pageChange)="onTableDataChange($event)" [autoHide]="autoHide" [maxSize]="6"></pagination-controls>
   </div>
 </section>
 
