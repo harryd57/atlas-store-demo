@@ -1,0 +1,35 @@
+<atlas-navbar></atlas-navbar>
+<section class="bg-[#E6E6FA] h-full flex items-center flex-col py-4 md:py-10">
+  <div id="container" class="bg-white w-11/12 md:w-6/12 lg:w-3/12 mt-4 rounded-md shadow">
+    <div id="container-header" class="bg-blue-400 text-white p-4 rounded-t-md">
+      <h3 class="font-medium">Register</h3>
+    </div>
+    <form>
+      <div id="form-content" class="p-8 text-gray-700">
+        <div class="flex flex-col">
+          <label class="text-sm mb-2" for="email">Email Address</label>
+          <input class="border border-gray-300 h-10 rounded-md py-4 px-2 text-xs focus:outline-blue-400" type="email" placeholder="Enter Email">
+        </div>
+        <div class="flex flex-col mt-2">
+          <label class="text-sm mb-2" for="first_name">First Name</label>
+          <input class="border border-gray-300 h-10 rounded-md py-4 px-2 text-xs focus:outline-blue-400" type="text" placeholder="Enter First Name">
+        </div>
+        <div class="flex flex-col mt-2">
+          <label class="text-sm mb-2" for="last_name">Last Name</label>
+          <input class="border border-gray-300 h-10 rounded-md py-4 px-2 text-xs focus:outline-blue-400" type="text" placeholder="Enter Last Name">
+        </div>
+        <div class="flex flex-col mt-2">
+          <label class="text-sm mb-2" for="password">Password</label>
+          <input class="border border-gray-300 h-10 rounded-md py-4 px-2 text-xs focus:outline-blue-400" type="password" placeholder="Enter Password">
+        </div>
+        <div class="mt-4">
+          <input class="h-10 w-[100%] rounded-md text-sm text-center tracking-wide bg-blue-400 text-white py-2 hover:bg-blue-700 hover:tracking-wider" type="submit" value="Register">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="mt-6 mx-auto text-sm text-gray-700">
+    <p>Already have an account? <a class="text-blue-600 hover:text-blue-400 hover:underline" routerLink="/login">Login</a></p>
+  </div>
+</section>
+<atlas-footer></atlas-footer>

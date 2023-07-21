@@ -27,14 +27,16 @@
         </span>
         <span class="flex flex-row">
           <h4 class="text-sm text-gray-500 my-auto">Quantity: </h4> 
-          <button class="ml-4 border border-gray-300 h-[30px] w-[30px] text-gray-500 rounded-l-sm">-</button>
-          <button class="border border-gray-300 h-[30px] w-[40px] text-gray-500 text-sm">1</button>
-          <button class="border border-gray-300 h-[30px] w-[30px] text-gray-500 rounded-r-sm">+</button>
+          <button (click)="decrease()" class="ml-4 border border-gray-300 h-[30px] w-[30px] text-gray-500 rounded-l-sm">-</button>
+          <button class="border border-gray-300 h-[30px] w-[40px] text-gray-500 text-sm">{{quantity}}</button>
+          <button (click)="increase()" class="border border-gray-300 h-[30px] w-[30px] text-gray-500 rounded-r-sm">+</button>
         </span>
       </div>
       <div class="py-6 border-b">
-        <button class="text-sm border bg-blue-500 text-white h-[50px] w-[200px] rounded-lg hover:bg-blue-400"
+        <a routerLink="/cart">
+          <button class="text-sm border bg-blue-500 text-white h-[50px] w-[200px] rounded-lg hover:bg-blue-400"
         >Add to Cart</button>
+        </a>
       </div>
       <div class="py-6">
         <h3 class="text-sm">Share with friends</h3>
@@ -61,5 +63,5 @@
     <p class="text-sm">
     {{ details }}
     </p>
-  </div>
+  </div> 
 </section>

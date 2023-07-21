@@ -5,9 +5,9 @@
 <main *ngIf="!loading" class="bg-[#E6E6FA] py-1 overflow-hidden">
   <div class="bg-white h-[50px] w-full mx-auto flex items-center px-2 shadow-lg">
     <h3 class="text-sm">
-      <span class="hover:text-gray-400"><a href="#">Home</a></span>
+      <span class="hover:text-gray-400"><a [routerLink]="'/home'">Home</a></span>
       <span class="ml-2">></span>
-      <span class="ml-2 hover:text-gray-400"><a href="#">{{ product[0].brandName }}</a></span>
+      <span class="ml-2 hover:text-gray-400"><a [routerLink]="'/products'">{{ product[0].brandName }}</a></span>
       <span class="ml-2">></span>
       <span class="ml-2">{{ product[0].name }}</span>
     </h3>

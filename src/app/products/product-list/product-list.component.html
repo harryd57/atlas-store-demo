@@ -17,7 +17,7 @@
     <span class="text-gray-300 text-sm"><i class="fa-solid fa-star"></i></span>
   </div>
   <div class="ml-4">
-    <button class="text-xs h-[20px] w-[100px] border bg-blue-500 text-white rounded-md">More Options</button>
+    <a [routerLink]="['/product-id', items.id]"><button class="text-xs h-[20px] w-[100px] border bg-blue-500 text-white rounded-md">More Options</button></a>
   </div>
   </div>
 </div>
@@ -48,7 +48,7 @@
       <span class="text-gray-300 text-sm"><i class="fa-solid fa-star"></i></span>
     </div>
     <div class="ml-4 mt-2">
-      <button class="text-xs h-[20px] w-[100px] border bg-blue-500 text-white rounded-md">More Options</button>
+      <a [routerLink]="['/product-id', items.id]"><button class="text-xs h-[20px] w-[100px] border bg-blue-500 text-white rounded-md">More Options</button></a>
     </div>
   </div>
   </div>

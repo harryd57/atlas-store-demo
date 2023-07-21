@@ -12,4 +12,18 @@ export class ProductDetComponent {
   @Input() details : string = "";
   @Input() image : string = "";
   @Input() brand : string = "";
+
+  quantity : number = 1;
+
+
+  increase(): void{
+    this.quantity++
+  }
+  decrease(): void{
+    if(this.quantity === 1){
+      this.quantity = 1
+    }else{
+      this.quantity--
+    }
+  }
 }

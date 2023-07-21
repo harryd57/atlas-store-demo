@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'
 import { GlobalModule } from '../global/global.module';
+import { AppRoutingModule } from '../app-routing.module';
 import { FilterComponent } from './filter/filter.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { SearchComponent } from './search/search.component';
@@ -26,7 +27,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CommonModule,
     GlobalModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    AppRoutingModule
   ]
 })
 export class ProductsModule { }

@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CartComponent } from './cart.component';
 import { GlobalModule } from '../global/global.module';
-import { CartitemsComponent } from './cartitems/cartitems.component';
+import { AuthComponent } from './auth.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 import { AppRoutingModule } from '../app-routing.module';
 
 
 
 @NgModule({
   declarations: [
-    CartComponent,
-    CartitemsComponent,
+    AuthComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
-    CommonModule, 
+    CommonModule,
     GlobalModule,
     AppRoutingModule
   ]
 })
-export class CartModule { }
+export class AuthModule { }

@@ -9,11 +9,15 @@ import { ProductsModule } from './products/products.module';
 import { GlobalModule } from './global/global.module';
 import { ProductIdModule } from './product-id/product-id.module';
 import { CartModule } from './cart/cart.module';
+import { AuthModule } from './auth/auth.module';
+import { CheckoutModule } from './checkout/checkout.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    NotFoundComponent,
     
   ],
   imports: [
@@ -25,7 +29,9 @@ import { CartModule } from './cart/cart.module';
     GlobalModule,
     ProductIdModule,
     HttpClientModule, 
-    CartModule
+    CartModule,
+    AuthModule,
+    CheckoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
